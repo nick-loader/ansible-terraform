@@ -2,7 +2,7 @@ FROM ubuntu:18.04
 
 ENV TERRAFORM_VERSION=0.13.4
 
-RUN apt-get update && apt-get install wget zip -y && \
+RUN apt-get update && apt-get install wget zip gpg -y && \
     wget "https://releases.hashicorp.com/terraform/${TERRAFORM_VERSION}/terraform_${TERRAFORM_VERSION}_linux_amd64.zip" && \
     unzip -o ./terraform_${TERRAFORM_VERSION}_linux_amd64.zip -d /usr/bin/ && \
     rm ./terraform_${TERRAFORM_VERSION}_linux_amd64.zip && \
